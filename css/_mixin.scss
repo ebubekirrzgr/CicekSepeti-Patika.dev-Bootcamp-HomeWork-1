@@ -1,0 +1,22 @@
+
+/* MIXIN */
+
+@mixin display-flex($display, $align-items, $justify-content) {
+    display: $display;
+    align-items: $align-items;
+    justify-content: $justify-content;
+  }
+  
+  @mixin for-size($size) {
+    @if $size == phone-only {
+      @media (max-width: 600px) { @content; }
+    } @else if $size == tablet-portrait-up {
+      @media (min-width: 650px) { @content; }
+    } @else if $size == tablet-landscape-up {
+      @media (min-width: 900px) { @content; }
+    } @else if $size == desktop-up {
+      @media (min-width: 1200px) { @content; }
+    } @else if $size == big-desktop-up {
+      @media (min-width: 1800px) { @content; }
+    }
+  }

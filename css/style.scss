@@ -1,0 +1,251 @@
+@import "variables";
+@import "mixin";
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $second-color;
+  font-size: 10px;
+  font-family: $primary-font;
+}
+
+.container {
+  max-width: auto;
+  margin: 0 auto;
+  padding: 1rem;
+  width: 100%;
+}
+
+/* Header  */
+
+.nav {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  flex-wrap: wrap;
+  
+}
+
+.header {
+  justify-content: space-between;
+  padding: 10px 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: $first-color;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  &__logo {
+    width: 150px;
+    min-width: 140px;
+    margin-right: 1em;
+    img {
+      width: 100%;
+    }
+  }
+  &__search-bar{
+    @media (max-width:800px){
+      order:3;
+      flex-basis: 100%;
+      width: 100%;
+      margin-top: 1em;
+    }
+  }
+
+  &__profile {
+    width: 2%;
+    margin-right: 2em;
+    @media (max-width:800px){
+      
+      margin-right: 5em;
+    }
+  }
+  &__search {
+    width: 100%;
+  }
+  &__input {
+    width: 500px;
+    padding: 10px 10px 10px 25px;
+    @media (max-width:800px){     
+      width: 100%;
+    }
+  }
+}
+.search-bar {
+  position: relative;
+  width: 100%;
+  display: inline-block;
+  flex-basis: 60%;
+  align-self: baseline;
+  
+}
+.fa-search {
+  position: absolute;
+  left: 9px;
+  top: 14px;
+}
+.fa-user {
+  color: $fourth-color;
+  margin-left: 1em;
+}
+
+/* Sidebar  */
+
+.sidebar {
+  flex-basis: 20%;
+  background-color: $third-color;
+  width: 100%;
+  padding: 0 0rem;
+  margin-right: 1em;
+  align-self: baseline;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  a {
+    display: block;
+    text-decoration: none;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 15px;
+
+    &:hover {
+      &:not(.active) {
+        background-color: $fourth-color-2;
+        color: white;
+      }
+    }
+  }
+  a.active {
+    background-color: $fourth-color;
+    color: white;
+  }
+
+  &-item {
+    line-height: 4rem;
+  }
+}
+
+.main-container {
+  margin-top: 3rem;
+
+  @include display-flex(flex, center, space-between);
+}
+
+.content {
+  @include display-flex(flex, center, space-between);
+  flex-basis: 75%;
+  align-items: flex-start;
+}
+
+/* Form  */
+
+.form {
+  background-color: $fourth-color;
+  align-items: center;
+  padding: 3em;
+  // display: none;
+  flex: 1;
+  flex-direction: column;
+  margin-right: 5em;
+  border-radius: 1em;
+  & > *:not(:last-child) {
+    padding: 1rem;
+    width: 100%;
+    border: 2px solid $first-color;
+    border-radius: 1em;
+    background-color: transparent;
+  }
+  & > input:not(:first-child) {
+    margin-top: 5px;
+  }
+
+  &-button {
+    font-family: $primary-font;
+    background-color: $first-color;
+    border-radius: 1em;
+    height: 3rem;
+    width: 95%;
+    margin-top: 2rem;
+    margin-bottom: 1em;
+
+    &:hover {
+      background-color: darken($color: antiquewhite, $amount: 20%);
+    }
+  }
+
+  .radio-menu {
+    @include display-flex(flex, center, flex-start);
+
+    .radio-menu-items {
+      margin-left: 1rem;
+      // accent-color: $first-color;
+      & > * {
+        padding: 0.3rem;
+      }
+    }
+  }
+  .radio-options {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Card List */
+
+.card-list {
+  padding: 2em;
+  margin-right: 5em;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 1em;
+  overflow: hidden;
+}
+
+.card-list-item {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-transform: capitalize;
+  display: flex;
+  flex: 1;
+  border: 2px solid $first-color;
+  border-radius: 1em;
+  text-align: center;
+  justify-content: space-between;
+  background-color: $fourth-color-2;
+  overflow: hidden;
+  max-height: 400px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  img {
+    width: 100%;
+    height: 50%;
+    border-radius: 0.5em;
+    object-fit: cover;
+    margin-bottom: 0.5em;
+  }
+}
+/* Animate  */
+
+.animate-bottom {
+  position: relative;
+  animation: animatebottom 0.6s;
+}
+@keyframes animatebottom {
+  from {
+    bottom: -300px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+// grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));

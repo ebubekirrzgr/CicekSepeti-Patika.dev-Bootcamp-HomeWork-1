@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/script.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <title>Week-2 Homework</title>
+  </head>
+  <body>
+    <!-- HEADER -->
+
+    <header class="header">
+      <div class="container">
+        <div class="nav">
+          <div class="header__logo">
+            <a href="https://www.ciceksepeti.com/"
+              ><img alt="logo" src="./img/cicek-sepeti-logo.png" />
+            </a>
+          </div>
+          <div class="header__search-bar">
+            <div class="search-bar">
+              <input
+                class="header__input"
+                type="text"
+                placeholder="Search..."
+              /><i class="fas fa-search"></i>
+            </div>
+          </div>
+          <div class="header__profile">
+            <a target="_blank" href="https://github.com/ebubekirrzgr"
+              ><i class="fas fa-user fa-3x"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="main-container">
+        <!-- SIDEBAR -->
+
+        <div class="sidebar">
+          <a class="sidebarTab" onclick="sidebarNav(event, 'Bottom')">Form</a>
+          <a class="sidebarTab" onclick="sidebarNav(event, 'Zoom')">Cards</a>
+        </div>
+
+        <!-- SIDEBAR-END -->
+
+        <div class="content">
+          <!-- FORM -->
+
+          <div
+            id="Bottom"
+            class="form tabs animate-bottom"
+            style="display: none"
+          >
+            <input type="text" name="company" placeholder="Company" />
+            <input type="text" name="firstName" placeholder="First Name" />
+            <input type="text" name="lastName" placeholder="Last Name" />
+            <input type="email" name="email" placeholder="Email" />
+            <input type="text" name="firstName" placeholder="Title" />
+            <input type="text" name="phone" placeholder="Phone" />
+            <br />
+
+            <div class="radio-menu">
+              <div class="radio-title">Job Functions:</div>
+              <div class="radio-menu-items">
+                <div class="radio-menu-item">
+                  <input type="radio" name="Deneme" value="deneme" />
+                  <span> Campaign Management </span>
+                </div>
+                <div class="radio-menu-item">
+                  <input type="radio" name="Deneme" value="deneme" />
+                  <span> CRM Administration </span>
+                </div>
+                <div class="radio-menu-item">
+                  <input type="radio" name="Deneme" value="deneme" />
+                  <span> Email Deployment </span>
+                </div>
+                <div class="radio-menu-item">
+                  <input type="radio" name="Deneme" value="deneme" />
+                  <span> Partner </span>
+                </div>
+                <div class="radio-menu-item">
+                  <input type="radio" name="Deneme" value="deneme" />
+                  <span> Employee </span>
+                </div>
+              </div>
+            </div>
+            <input
+              type="text"
+              name="dietary-requirements"
+              placeholder="Dietary Requirements"
+            />
+            <input
+              type="text"
+              name="expectations"
+              placeholder="Expectations ?"
+            />
+            <button class="form-button" type="submit">Submit</button>
+          </div>
+
+          <!-- FORM-END -->
+
+          <!-- CARD-LIST -->
+
+          <div
+            id="Zoom"
+            class="tabs card-list animate-bottom"
+            style="display: none"
+          ></div>
+          <!-- CARD-LIST-END-->
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
