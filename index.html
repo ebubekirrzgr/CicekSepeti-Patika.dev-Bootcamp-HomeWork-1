@@ -55,68 +55,82 @@
 
         <div class="content">
           <!-- FORM -->
-
+          
           <div
-            id="Bottom"
-            class="form tabs animate-bottom"
-            style="display: none"
+          id="Bottom"
+          class="form tabs animate-bottom"
+          style="display: none"
           >
-            <input type="text" name="company" placeholder="Company" />
-            <input type="text" name="firstName" placeholder="First Name" />
-            <input type="text" name="lastName" placeholder="Last Name" />
-            <input type="email" name="email" placeholder="Email" />
-            <input type="text" name="firstName" placeholder="Title" />
-            <input type="text" name="phone" placeholder="Phone" />
+          <form class="form">
+          <!-- <form class="form"> -->
+            <input type="text" class="company" placeholder="Company" />
+            <input type="text" class="firstName" placeholder="First Name" />
+            <input type="text" class="lastName" placeholder="Last Name" />
+            <input type="email" class="email" placeholder="Email" />
+            <input type="text" class="title" placeholder="Title" />
+            <input type="text" class="phone" placeholder="Phone" />
             <br />
 
             <div class="radio-menu">
               <div class="radio-title">Job Functions:</div>
               <div class="radio-menu-items">
                 <div class="radio-menu-item">
-                  <input type="radio" name="Deneme" value="deneme" />
+                  <input type="radio" name="radio" value="Campaign Management" />
                   <span> Campaign Management </span>
                 </div>
                 <div class="radio-menu-item">
-                  <input type="radio" name="Deneme" value="deneme" />
+                  <input type="radio" name="radio" value="CRM Administration" />
                   <span> CRM Administration </span>
                 </div>
                 <div class="radio-menu-item">
-                  <input type="radio" name="Deneme" value="deneme" />
+                  <input type="radio" name="radio" value="Email Deployment" />
                   <span> Email Deployment </span>
                 </div>
                 <div class="radio-menu-item">
-                  <input type="radio" name="Deneme" value="deneme" />
+                  <input type="radio" name="radio" value="Partner" />
                   <span> Partner </span>
                 </div>
                 <div class="radio-menu-item">
-                  <input type="radio" name="Deneme" value="deneme" />
+                  <input type="radio" name="radio" value="Employee" />
                   <span> Employee </span>
                 </div>
               </div>
+            
             </div>
             <input
               type="text"
-              name="dietary-requirements"
+              class="dietary-requirements"
               placeholder="Dietary Requirements"
             />
             <input
               type="text"
-              name="expectations"
+              class="expectations"
               placeholder="Expectations ?"
             />
-            <button class="form-button" type="submit">Submit</button>
+            <br>
+          </form>
+            <button id="sendButton" class="form-button" type="submit">Submit</button>
           </div>
-
+          
           <!-- FORM-END -->
-
+          
           <!-- CARD-LIST -->
-
+          
           <div
-            id="Zoom"
-            class="tabs card-list animate-bottom"
-            style="display: none"
+          id="Zoom"
+          class="tabs card-list animate-bottom"
+          style="display: none"
           ></div>
           <!-- CARD-LIST-END-->
+          
+          <div id="formModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal__content">
+              <span class="modal__close">&times;</span>
+              <p class="modal__p">lorem ipsum dolor sit amet</p>
+            </div>
+          
+          </div>
         </div>
       </div>
     </main>
