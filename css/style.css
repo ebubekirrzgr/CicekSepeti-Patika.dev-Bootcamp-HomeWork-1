@@ -387,4 +387,11 @@ body {
 .modal__p {
   font-family: "Lucida Console", "Courier New", monospace;
 }
+
+li {
+  font-size: 18px;
+  margin-left: 10px;
+  padding: 5px;
+  list-style: none;
+}
 /*# sourceMappingURL=style.css.map */

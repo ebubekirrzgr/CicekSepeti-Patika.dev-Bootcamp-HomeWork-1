@@ -63,9 +63,11 @@ var modal = document.getElementById("formModal");
 var sendBtn = document.getElementById("sendButton");
 var span = document.getElementsByClassName("modal__close")[0];
 var form = document.querySelector("form");
+const modal_content = document.querySelector(".modal__ul");
 
-function formSubmit() {  
-  const data = document.querySelector(".company").value;
+function formSubmit() {
+  
+  const data1 = document.querySelector(".company").value;
   const data2 = document.querySelector(".firstName").value;
   const data3 = document.querySelector(".lastName").value;
   const data4 = document.querySelector(".email").value;
@@ -73,8 +75,11 @@ function formSubmit() {
   const data6 = document.querySelector(".phone").value;
   const data7 = document.querySelector(".dietary-requirements").value;
   const data8 = document.querySelector(".expectations").value;
-  const rad = document.querySelector('input[name="radio"]:checked')?document.querySelector('input[name="radio"]:checked').value:alert("A form field cannot be left blank");
-  console.log(data);
+  const rad = document.querySelector('input[name="radio"]:checked')
+    ? document.querySelector('input[name="radio"]:checked').value
+    : alert("A form field cannot be left blank");
+
+  console.log(data1);
   console.log(data2);
   console.log(data3);
   console.log(data4);
@@ -83,15 +88,39 @@ function formSubmit() {
   console.log(rad);
   console.log(data7);
   console.log(data8);
+  let modalp = `
+        <ul>
+          <li><b>Company :</b> ${data1}</li>
+          <li><b>First Name :</b> ${data2}</li>
+          <li><b>Last Name :</b> ${data3}</li>
+          <li><b>Email :</b> ${data4}</li>
+          <li><b>Title :</b> ${data5}</li>
+          <li><b>Phone :</b> ${data6}</li>
+          <li><b>Job Funcitons :</b> ${rad}</li>
+          <li><b>Dietary Requirements :</b> ${data7}</li>
+          <li><b>Expectations :</b> ${data8}</li>
+        </ul>`;
+
+        modal_content.innerHTML += modalp;
+  
+  // <p class="modal__p">Form data in console log</p>
 }
-sendBtn.onclick = function () {
-  modal.style.display = "block";  
-  formSubmit();
-};
+
+document.querySelector(".form").addEventListener("submit",handleSubmit);
+
+function handleSubmit(e) {
+  e.preventDefault();
+  modal.style.display = "block";
+  formSubmit();    
+}
+
+
+
 
 span.onclick = function () {
   modal.style.display = "none";
   form.reset();
+  modal_content.innerHTML = "";
 };
 window.onclick = function (event) {
   if (event.target == modal) {
@@ -100,4 +129,3 @@ window.onclick = function (event) {
 };
 
 /* SENDING FORM VALUES TO MODAL */
-
